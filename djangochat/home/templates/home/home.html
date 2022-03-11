@@ -1,0 +1,32 @@
+{% extends 'home/base.html' %}
+{% block title %}Home|{% endblock  %}
+{% block content %}
+
+
+{% if request.user.is_authenticated %}
+<div class="p-10 lg-p-50 text-center text-6xl text-green-500 ">
+    Welcome to ChatApp
+</div>
+<div class="text-center">
+    <div class="max-w-sm rounded overflow-hidden shadow-lg mx-auto my-10 bg-green-100 ">
+  
+        <div class="px-6 py-4 text-center">
+          <div class="font-bold text-xl mb-2 text-center ">Rooms</div>
+          <a href="/room">
+          <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-5 rounded-full text-center">
+            Go
+          </button></a>
+         
+        </div>
+    </div>
+</div>
+
+{% else %}
+<div class="py-20 lg:p-50 text-center text-6xl text-green-500 my-20 hover:text-green-300 ">
+    Welcome to ChatApp
+</div>
+
+{% endif %}
+
+
+{% endblock %}

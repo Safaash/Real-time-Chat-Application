@@ -1,0 +1,24 @@
+{% extends 'home/base.html' %}
+{% block title %}Room | {% endblock  %}
+{% block textroom %}text-green-500{% endblock textroom %}
+{% block content %}
+{% if rooms %}
+{% for room in rooms %}
+<div class="max-w-sm rounded overflow-hidden shadow-lg mx-auto my-10 bg-green-100  ">
+  
+    <div class="px-6 py-4 text-center">
+      <div class="font-bold text-xl mb-2 text-center ">{{room.name}}</div>
+      <a href="{% url 'room_detail' room.slug %}">
+      <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-5 rounded-full text-center">
+        Join
+      </button></a>
+     
+    </div>
+</div>
+
+{% endfor %}
+
+
+{% endif %}
+
+{% endblock  %}
